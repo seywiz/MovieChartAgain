@@ -13,9 +13,9 @@ import UIKit
 class ListCellViewController : UITableViewController {
     
     let dataset = [
-        ("김윤수","남편이여","1975-03-19",43),
+        ("김윤수","남편이여!","1975-03-19",43),
         ("손승은","부인입니당~","1978-11-06",40),
-        ("김연우","우리 딸이요~","2017-06-17",3)
+        ("김연우","딸이요~","2017-06-17",3)
     ]
     
     lazy var list : [MovieVO] = {
@@ -57,6 +57,7 @@ class ListCellViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as UITableViewCell!
         
         cell?.textLabel?.text = listData.title
+        cell!.detailTextLabel?.text = listData.description
 
         return cell!
         
